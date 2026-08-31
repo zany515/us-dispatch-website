@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ================= SEO OPTIMIZATION ================= -->
+    <title>Stallion Nexus | Partner With Us & Setup Now</title>
+    <meta name="description" content="Start your growth journey with Stallion Nexus. Submit your partnership request for strategic truck dispatching or automated e-commerce wealth building.">
+    <meta name="keywords" content="Stallion Nexus onboarding, partner with us, trucking dispatch setup, freight carrier onboarding, e-commerce automation partnership, Zvylo truck accessories">
+    <meta name="author" content="Stallion Nexus">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media Sharing -->
+    <meta property="og:title" content="Stallion Nexus | Setup Now">
+    <meta property="og:description" content="Let's build your empire. Fill out our onboarding form and our strategic team will contact you within 24 hours.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Scroll Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; overflow-wrap: break-word; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #F4F4F6; color: #0A0A0C; padding-top: 120px; overflow-x: hidden; }
+
+        /* ----------------------------------
+           1. Header (Liquid Glass)
+        ----------------------------------- */
+        .site-header {
+            position: fixed; top: 18px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 1240px;
+            padding: 14px 28px; z-index: 1000; border-radius: 24px;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px) saturate(190%);
+            -webkit-backdrop-filter: blur(25px) saturate(190%); border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+        .logo-container { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        
+        .logo-icon { height: 42px; max-height: 42px; width: auto; object-fit: contain; flex-shrink: 0; }
+        
+        .logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: #0A0A0C; text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo-text span { color: #FF4719; }
+        
+        .nav-menu { display: flex; align-items: center; gap: 12px; list-style: none; }
+        .nav-link { text-decoration: none; color: #0A0A0C; font-weight: 600; font-size: 0.9rem; padding: 8px 14px; border-radius: 14px; transition: all 0.25s ease; text-transform: uppercase; letter-spacing: 0.5px;}
+        .nav-link:hover, .nav-link.active { color: #FF4719; background: rgba(255, 71, 25, 0.08); }
+        
+        .btn-action { background: #FF4719; color: #FFFFFF; padding: 10px 22px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; text-decoration: none; box-shadow: 0 8px 20px rgba(255, 71, 25, 0.3); transition: all 0.3s ease; display: inline-block; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-action:hover { transform: translateY(-2px); background: #E03A10; box-shadow: 0 12px 25px rgba(255, 71, 25, 0.45); }
+        
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: transparent; border: none; cursor: pointer; padding: 6px; border-radius: 8px; }
+        .mobile-toggle span { width: 24px; height: 3px; background-color: #0A0A0C; border-radius: 3px; transition: all 0.3s ease; }
+
+        /* ----------------------------------
+           2. Form Header Section
+        ----------------------------------- */
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px 80px 20px; }
+        
+        .form-header { text-align: center; margin-bottom: 40px; }
+        .slogan-badge { display: inline-flex; align-items: center; gap: 8px; background: #0A0A0C; color: #FFFFFF; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); animation: pulseGlow 3s infinite alternate;}
+        .slogan-badge .dot { width: 8px; height: 8px; background: #FF4719; border-radius: 50%; }
+        
+        .form-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); color: #0A0A0C; margin-bottom: 20px; line-height: 1.1; text-transform: uppercase; letter-spacing: -1px;}
+        .form-header h1 span { color: #FF4719; }
+        .form-header p { font-size: 1.15rem; color: #55555E; line-height: 1.6; font-weight: 500;}
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 25, 0.4); }
+            100% { box-shadow: 0 0 0 12px rgba(255, 71, 25, 0); }
+        }
+
+        /* ----------------------------------
+           3. TAB SWITCHER (DISPATCH VS E-COMMERCE)
+        ----------------------------------- */
+        .tab-switcher {
+            display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: #FFFFFF; color: #0A0A0C; border: 1.5px solid #E2E2E8;
+            padding: 14px 28px; border-radius: 30px; font-weight: 700; font-size: 0.95rem;
+            cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tab-btn.active {
+            background: #0A0A0C; color: #FFFFFF; border-color: #0A0A0C; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* ----------------------------------
+           4. Professional Onboarding Form
+        ----------------------------------- */
+        .form-card { background: #FFFFFF; border-radius: 28px; padding: 50px; box-shadow: 0 15px 50px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05); }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group.full-width { grid-column: 1 / -1; }
+        
+        .form-group label { font-size: 0.95rem; font-weight: 700; color: #55555E; text-transform: uppercase; letter-spacing: 1px;}
+        .form-group label span { color: #FF4719; }
+        
+        .form-group input, .form-group select, .form-group textarea { 
+            padding: 16px 20px; border-radius: 16px; border: 1.5px solid #E2E2E8; background: #F9F9FB; 
+            font-size: 1.05rem; color: #0A0A0C; transition: all 0.3s ease; outline: none; font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500; width: 100%;
+        }
+        .form-group select { appearance: none; -webkit-appearance: none; cursor: pointer;}
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+            border-color: #FF4719; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255, 71, 25, 0.08); 
+        }
+
+        /* Drag and Drop Upload Box */
+        .upload-box { 
+            border: 2px dashed #D1D1D6; border-radius: 16px; padding: 40px 20px; text-align: center; 
+            background: #F9F9FB; transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .upload-box:hover { border-color: #FF4719; background: rgba(255, 71, 25, 0.02); }
+        .upload-icon { width: 45px; height: 45px; fill: #A0A0A8; margin-bottom: 15px; transition: all 0.3s ease; }
+        .upload-box:hover .upload-icon { fill: #FF4719; transform: translateY(-5px); }
+        .upload-text { font-weight: 700; color: #0A0A0C; font-size: 1.1rem; margin-bottom: 5px; }
+        .upload-subtext { font-size: 0.9rem; color: #888891; font-weight: 500; }
+        
+        .download-note { font-size: 0.95rem; color: #888891; margin-top: 15px; line-height: 1.5; font-weight: 500;}
+        .download-note a { color: #FF4719; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; transition: color 0.3s ease;}
+        .download-note a:hover { color: #E03A10; }
+
+        .submit-btn-wrapper { grid-column: 1 / -1; margin-top: 15px; display: flex; justify-content: center;}
+        
+        .submit-btn { 
+            background: #FF4719; 
+            color: #FFFFFF; padding: 18px 40px; border: none; border-radius: 30px; font-weight: 800; font-size: 1.15rem; 
+            cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(255, 71, 25, 0.3); display: inline-flex; align-items: center; gap: 10px; width: 100%; justify-content: center;
+        }
+        .submit-btn svg { width: 22px; height: 22px; fill: currentColor; }
+        .submit-btn:hover { background: #E03A10; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255, 71, 25, 0.45); }
+
+        /* ----------------------------------
+           5. Required Documents Section
+        ----------------------------------- */
+        .req-docs-container { 
+            background: #FFFFFF; border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.03); 
+            border: 1px solid rgba(0,0,0,0.05); overflow: hidden; margin-top: 40px;
+        }
+        .req-docs-header { 
+            background: #0A0A0C; color: #FFFFFF; padding: 30px; display: flex; align-items: center; gap: 20px; 
+        }
+        
+        .req-docs-icon { 
+            width: 55px; height: 55px; border: 1.5px solid rgba(255, 71, 25, 0.5); border-radius: 14px; 
+            display: flex; align-items: center; justify-content: center; color: #FF4719; flex-shrink: 0;
+        }
+        
+        .req-docs-icon svg { width: 26px; height: 26px; fill: currentColor; }
+        .req-docs-header h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; margin-bottom: 4px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.5px;}
+        .req-docs-header p { font-size: 0.95rem; color: rgba(255,255,255,0.6); font-weight: 500;}
+        
+        .req-docs-list { list-style: none; }
+        .req-docs-list li { 
+            padding: 22px 30px; border-bottom: 1px solid rgba(0,0,0,0.06); 
+            display: flex; align-items: center; gap: 15px; font-weight: 600; color: #4A4A52; font-size: 1.05rem; 
+        }
+        .req-docs-list li:last-child { border-bottom: none; }
+        
+        .req-docs-list li svg { width: 22px; height: 22px; fill: #FF4719; flex-shrink: 0; }
+
+        /* Security Badge */
+        .security-badge { 
+            display: flex; align-items: center; justify-content: center; gap: 12px; 
+            margin-top: 25px; padding: 18px 25px; background: rgba(52, 199, 89, 0.1); 
+            border-radius: 16px; color: #249A44; font-weight: 700; font-size: 0.95rem; text-align: center; border: 1px solid rgba(52, 199, 89, 0.2);
+        }
+        .security-badge svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0;}
+
+        /* ----------------------------------
+           6. ZVYLO PROMO BANNER
+        ----------------------------------- */
+        .zvylo-banner {
+            max-width: 1240px; margin: 60px auto 0 auto; padding: 50px 30px;
+            background: linear-gradient(135deg, #0A0A0C 0%, #1A1A1C 100%);
+            border-radius: 28px; text-align: center; color: #FFFFFF;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(255,71,25,0.2);
+            position: relative; overflow: hidden;
+        }
+        .zvylo-banner::before {
+            content: ''; position: absolute; top: -50%; left: -20%; width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(255,71,25,0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;
+        }
+        .zvylo-content { position: relative; z-index: 2; }
+        .zvylo-content h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 12px; text-transform: uppercase; letter-spacing: -1px; color: #FFFFFF;}
+        .zvylo-content h2 span { color: #FF4719; }
+        .zvylo-content p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 25px auto; line-height: 1.6; }
+        
+        .btn-zvylo { background: #FFFFFF; color: #0A0A0C; padding: 12px 30px; font-weight: 800; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease; border-radius: 30px; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-zvylo:hover { background: #FF4719; color: #FFFFFF; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 71, 25, 0.4); }
+
+        /* ----------------------------------
+           7. Footer
+        ----------------------------------- */
+        .site-footer { background: #0A0A0C; color: #FFFFFF; padding: 80px 20px 40px 20px; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 50px;}
+        .footer-container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 60px; }
+
+        .footer-brand .logo-text { font-family: 'Syne', sans-serif; font-size: 1.5rem; color: #FFFFFF; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
+        .footer-brand .logo-text span { color: #FF4719; }
+        .footer-brand .logo-icon-footer { width: 35px; height: auto; }
+        .footer-brand p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+
+        .footer-col h4 { font-family: 'Syne', sans-serif; font-size: 1.2rem; color: #FFFFFF; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid rgba(255, 71, 25, 0.5); display: inline-block; padding-bottom: 5px;}
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; }
+        .footer-col ul li a:hover { color: #FF4719; padding-left: 5px; }
+
+        .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .contact-item svg { width: 22px; height: 22px; fill: #FF4719; flex-shrink: 0; margin-top: 3px; }
+        .contact-text { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.5; }
+        .contact-text strong { color: #FFFFFF; display: block; margin-bottom: 3px; font-family: 'Syne', sans-serif; letter-spacing: 0.5px;}
+
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.9rem; }
+
+        /* ----------------------------------
+           8. WHATSAPP CHAT WIDGET
+        ----------------------------------- */
+        .floating-chat-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #FF4719; color: #FFFFFF; border: none;
+            display: flex; align-items: center; gap: 10px;
+            padding: 15px 25px; border-radius: 50px; cursor: pointer;
+            font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
+            box-shadow: 0 10px 30px rgba(255, 71, 25, 0.4);
+            z-index: 9999; transition: all 0.3s ease;
+        }
+        .floating-chat-btn:hover { transform: translateY(-5px); background: #E03A10; box-shadow: 0 15px 40px rgba(255, 71, 25, 0.6); }
+        .floating-chat-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+        .chat-box-popup {
+            position: fixed; bottom: 90px; right: 30px; width: 340px;
+            background: #FFFFFF; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            display: flex; flex-direction: column; overflow: hidden; z-index: 10000;
+            opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease;
+        }
+        .chat-box-popup.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .chat-header { background: #25D366; color: #FFFFFF; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .chat-header-info { display: flex; align-items: center; gap: 10px; }
+        .chat-header-info svg { width: 28px; height: 28px; fill: #FFFFFF; }
+        .chat-header-info strong { display: block; font-size: 1.1rem; line-height: 1.2; font-family: 'Syne', sans-serif; }
+        .chat-header-info p { font-size: 0.8rem; opacity: 0.9; margin: 0; }
+        .close-chat { background: none; border: none; color: #FFFFFF; font-size: 1.8rem; cursor: pointer; line-height: 1; outline: none; }
+        .chat-body { padding: 20px; background: #E5DDD5; height: 200px; overflow-y: auto; }
+        .chat-message-received { background: #FFFFFF; color: #0A0A0C; font-size: 0.95rem; line-height: 1.5; padding: 12px 16px; border-radius: 0 15px 15px 15px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .chat-footer { padding: 15px; background: #FFFFFF; display: flex; gap: 10px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .chat-footer input { flex: 1; padding: 12px 15px; border: 1px solid #E0E0E0; border-radius: 30px; outline: none; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .chat-footer input:focus { border-color: #25D366; }
+        .chat-footer button { background: #25D366; color: #FFFFFF; border: none; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.3s ease; }
+        .chat-footer button:hover { background: #1EBE55; }
+        .chat-footer button svg { width: 20px; height: 20px; fill: currentColor; transform: translateX(2px); }
+
+        /* ----------------------------------
+           9. Strict Mobile Responsive Rules
+        ----------------------------------- */
+        @media (max-width: 868px) {
+            body { padding-top: 100px; }
+            .site-header { width: 95%; padding: 12px 20px; top: 18px; } 
+            .header-inner { flex-wrap: wrap; }
+            .logo-container { flex: 1; }
+            .logo-icon { height: 36px; } 
+            .logo-text { font-size: 1rem; } 
+            .mobile-toggle { display: flex; margin-left: auto; }
+            
+            nav { width: 100%; }
+            .nav-menu { display: none; width: 100%; flex-direction: column; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 0, 0, 0.08); align-items: center; justify-content: center; gap: 10px; padding-bottom: 10px;}
+            .nav-menu.show { display: flex; }
+            .nav-menu li { width: 100%; display: flex; justify-content: center; align-items: center; }
+            .nav-link { width: 100%; max-width: 250px; text-align: center; padding: 12px 20px; display: block; border-radius: 20px; margin: 0 auto; font-size: 1rem;}
+            .btn-action { margin-top: 5px; width: 100%; max-width: 250px; text-align: center; padding: 14px 30px; display: block; margin: 0 auto; font-size: 1rem;}
+
+            .tab-switcher { flex-direction: column; gap: 10px; }
+            .tab-btn { width: 100%; text-align: center; }
+
+            .form-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 30px 20px; }
+            
+            .req-docs-header { padding: 25px 20px; flex-direction: column; text-align: center; gap: 15px;}
+            .req-docs-list li { padding: 20px; font-size: 0.95rem; align-items: flex-start;}
+            
+            .zvylo-banner { padding: 40px 20px; margin-inline: 10px; }
+            
+            .footer-container { gap: 40px; text-align: center;}
+            .footer-brand .logo-text { justify-content: center; }
+            .contact-item { justify-content: center; text-align: center; flex-direction: column; align-items: center;}
+
+            .floating-chat-btn { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.9rem; }
+            .floating-chat-btn svg { width: 20px; height: 20px; }
+            .chat-box-popup { right: 15px; left: 15px; width: auto; bottom: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-container">
+                <img src="icon.png" alt="Stallion Nexus Icon" class="logo-icon">
+                <div class="logo-text">STALLION <span>NEXUS</span></div>
+            </a>
+            
+            <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="offers.html" class="nav-link">Offers</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li> 
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li><a href="partner.html" class="btn-action active">Setup Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="form-header" data-aos="fade-down" data-aos-duration="1000">
+            <div class="slogan-badge">
+                <span class="dot"></span> ONBOARDING
+            </div>
+            <h1>Let's Build Your <span>Empire.</span></h1>
+            <p>Select your path below. Whether you need strategic freight management or want to build a digital e-commerce empire, our team will get you started fast.</p>
+        </div>
+
+        <!-- TAB SWITCHER -->
+        <div class="tab-switcher" data-aos="fade-up">
+            <button class="tab-btn active" id="tabTrucking">Freight Partner (Trucking)</button>
+            <button class="tab-btn" id="tabEcommerce">Digital Partner (E-Commerce)</button>
+        </div>
+
+        <!-- FORM CARD -->
+        <form class="form-card" id="onboardingForm" data-aos="fade-up" data-aos-duration="1000">
+            <div class="form-grid">
+                
+                <!-- Common Fields -->
+                <div class="form-group">
+                    <label>Full Name <span>*</span></label>
+                    <input type="text" placeholder="John Smith" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address <span>*</span></label>
+                    <input type="email" placeholder="john@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number <span>*</span></label>
+                    <input type="tel" placeholder="+1 (555) 000-0000" required>
+                </div>
+                
+                <div class="form-group freight-field">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="Your Trucking LLC">
+                </div>
+
+                <!-- FREIGHT SPECIFIC FIELDS -->
+                <div class="form-group freight-field">
+                    <label>Truck Type <span>*</span></label>
+                    <div style="position: relative;">
+                        <select style="width: 100%; cursor: pointer;" required id="truckSelect">
+                            <option value="" disabled selected>Select truck type</option>
+                            <option value="box-truck">Box Truck</option>
+                            <option value="reefer-box-truck">Reefer Box Truck</option>
+                            <option value="dry-van">Dry Van</option>
+                            <option value="reefer-dry-van">Reefer Dry Van</option>
+                            <option value="hot-shot">Hot Shot Truck</option>
+                            <option value="flatbed">Flatbed Truck</option>
+                            <option value="step-deck">Step Deck Truck</option>
+                            <option value="power-only">Power Only</option>
+                        </select>
+                        <span style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #0A0A0C;">▼</span>
+                    </div>
+                </div>
+
+                <div class="form-group freight-field">
+                    <label>MC Number</label>
+                    <input type="text" placeholder="MC-000000">
+                </div>
+
+                <div class="form-group full-width freight-field">
+                    <label>Message</label>
+                    <textarea placeholder="Tell us about your operation — lanes, goals, or any questions..."></textarea>
+                </div>
+
+                <div class="form-group full-width freight-field">
+                    <label style="color: #0A0A0C;">Dispatch Agreement <span style="text-transform: none; font-weight: 500; letter-spacing: 0; color: #888;">(optional — PDF or Word, max 10MB)</span></label>
+                    
+                    <div class="upload-box" onclick="alert('Demo: Select file dialog opened')">
+                        <svg class="upload-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.36 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+                        <div class="upload-text">Click to upload or drag & drop</div>
+                        <div class="upload-subtext">Signed Dispatch Agreement · PDF, DOC, DOCX · Max 10MB</div>
+                    </div>
+                    
+                    <div class="download-note">
+                        Don't have the agreement yet? <a href="#">Download template</a> — you can also submit without it and we'll send one during onboarding.
+                    </div>
+                </div>
+
+                <!-- E-COMMERCE SPECIFIC FIELD (HIDDEN BY DEFAULT) -->
+                <div class="form-group full-width ecom-field" style="display: none;">
+                    <label>Interested E-Commerce Service <span>*</span></label>
+                    <div style="position: relative;">
+                        <select style="width: 100%; cursor: pointer;">
+                            <option value="" disabled selected>Select an E-Commerce Path</option>
+                            <option value="done-for-you-store">Done-For-You Store Build (Shopify / TikTok)</option>
+                            <option value="ebay-dropshipping">eBay Dropshipping Automation</option>
+                            <option value="amazon-fba">Amazon FBA Management</option>
+                            <option value="tiktok-shop">TikTok Shop & Social Commerce</option>
+                            <option value="mentorship">1-on-1 E-Commerce Mentorship Program</option>
+                        </select>
+                        <span style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #0A0A0C;">▼</span>
+                    </div>
+                </div>
+
+                <div class="form-group full-width ecom-field" style="display: none;">
+                    <label>Your Goals / Message</label>
+                    <textarea placeholder="Tell us about your digital goals, budget, or current operations..."></textarea>
+                </div>
+
+                <div class="submit-btn-wrapper">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        Submit Onboarding Request
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- REQUIRED DOCUMENTS CARD (FREIGHT ONLY) -->
+        <div class="req-docs-container freight-field" data-aos="fade-up" data-aos-duration="1000">
+            <div class="req-docs-header">
+                <div class="req-docs-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                </div>
+                <div>
+                    <h3>Required Documents</h3>
+                    <p>Have these ready to speed up onboarding</p>
+                </div>
+            </div>
+            <ul class="req-docs-list">
+                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> MC Authority Certificate</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> USDOT Number</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Insurance Certificate (Stallion Nexus as cert. holder)</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> W9 Form</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Signed Dispatch Agreement</li>
+            </ul>
+        </div>
+
+        <!-- SECURITY TRUST BADGE -->
+        <div class="security-badge" data-aos="fade-up">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Your information is 100% encrypted, secure, and will never be compromised.</span>
+        </div>
+
+    </main>
+
+    <!-- ZVYLO PROMO BANNER -->
+    <section class="zvylo-banner" data-aos="zoom-in">
+        <div class="zvylo-content">
+            <h2>Upgrade Your Fleet with <span>Zvylo</span></h2>
+            <p>Looking for premium truck parts, essential accessories, and professional tools? Keep your equipment in top condition and avoid expensive downtime on the road.</p>
+            <a href="https://www.zvylo.com" target="_blank" class="btn-zvylo">Shop Truck Accessories ➔</a>
+        </div>
+    </section>
+
+    <!-- MEGA FOOTER SECTION -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand" data-aos="fade-up" data-aos-delay="100">
+                <div class="logo-text"> STALLION <span>NEXUS</span></div>
+                <p>Your strategic growth partner in logistics and digital wealth. We handle the complex backend so you can focus entirely on driving and scaling your fleet.</p>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <div class="contact-text">
+                        <strong>Email Us</strong>
+                        zayn@stallionnexus.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <div class="contact-text">
+                        <strong>Call / WhatsApp</strong>
+                        +1 (770) 609-3466
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dispatch Services Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>Dispatch Services</h4>
+                <ul>
+                    <li><a href="services.html">Premium Rate Negotiation</a></li>
+                    <li><a href="services.html">Strategic Route Planning</a></li>
+                    <li><a href="services.html">Broker Communication</a></li>
+                    <li><a href="services.html">Billing & Invoicing</a></li>
+                    <li><a href="services.html">IFTA & DOT Compliance</a></li>
+                    <li><a href="services.html">24/7 Driver Support</a></li>
+                </ul>
+            </div>
+
+            <!-- E-Commerce Services Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>E-Commerce Agency</h4>
+                <ul>
+                    <li><a href="services.html">Amazon FBA Automation</a></li>
+                    <li><a href="services.html">eBay Dropshipping Stores</a></li>
+                    <li><a href="services.html">TikTok Shop Management</a></li>
+                    <li><a href="services.html">Custom Brand Storefronts</a></li>
+                    <li><a href="services.html">Passive Income Scaling</a></li>
+                </ul>
+            </div>
+
+            <!-- Office & Time Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                <h4>Headquarters</h4>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <div class="contact-text">
+                        <strong>Location</strong>
+                        [Your Address Here],<br>United States
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <div class="contact-text">
+                        <strong>Business Hours</strong>
+                        Dispatch: 24/7 Available<br>Office: Mon - Fri (8AM - 6PM)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>©️ 2026 Stallion Nexus. All rights reserved. Developed by Stallion Nexus.</p>
+        </div>
+    </footer>
+
+    <!-- ================= WHATSAPP CHAT WIDGET ================= -->
+    <button class="floating-chat-btn" id="chatToggleBtn" aria-label="Chat with Stallion Nexus">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.48 5.22 3.79 6.84V22l4.13-2.33c.66.15 1.35.25 2.08.25 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
+        </svg>
+        <span>Chat With Us</span>
+    </button>
+
+    <div class="chat-box-popup" id="chatBoxPopup">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    <div>
+                        <strong>Stallion Nexus</strong>
+                        <p>Usually replies instantly</p>
+                    </div>
+                </div>
+                <button class="close-chat" id="closeChatBtn">&times;</button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message-received">
+                    Hi there! 👋<br>Need help with onboarding? Send us a message!
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+                <button id="sendChatBtn" aria-label="Send Message">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+
+    <!-- AOS JS and Init script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+        window.addEventListener('load', () => {
+            AOS.init({ once: true, offset: 100 });
+
+            // --- PERFECT MOBILE MENU TOGGLE ---
+            const mobileToggleBtn = document.getElementById("mobileToggleBtn");
+            const navMenu = document.getElementById("navMenu");
+
+            mobileToggleBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); 
+                navMenu.classList.toggle("show");
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnToggleBtn = mobileToggleBtn.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnToggleBtn && navMenu.classList.contains("show")) {
+                    navMenu.classList.remove("show");
+                }
+            });
+
+            // --- TAB SWITCHER LOGIC (TRUCKING VS ECOMMERCE) ---
+            const tabTrucking = document.getElementById('tabTrucking');
+            const tabEcommerce = document.getElementById('tabEcommerce');
+            const freightFields = document.querySelectorAll('.freight-field');
+            const ecomFields = document.querySelectorAll('.ecom-field');
+            const submitBtn = document.getElementById('submitBtn');
+            const truckSelect = document.getElementById('truckSelect');
+
+            tabTrucking.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabTrucking.classList.add('active');
+                tabEcommerce.classList.remove('active');
+                freightFields.forEach(el => el.style.display = ''); // Show freight fields
+                ecomFields.forEach(el => el.style.display = 'none'); // Hide ecom fields
+                truckSelect.setAttribute('required', 'required'); // Require truck type
+                submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit Onboarding Request';
+            });
+
+            tabEcommerce.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabEcommerce.classList.add('active');
+                tabTrucking.classList.remove('active');
+                freightFields.forEach(el => el.style.display = 'none'); // Hide freight fields
+                ecomFields.forEach(el => el.style.display = ''); // Show ecom fields
+                truckSelect.removeAttribute('required'); // Remove required from hidden field
+                submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit E-Commerce Request';
+            });
+
+            // --- FORM SUBMISSION ---
+            const onboardingForm = document.getElementById('onboardingForm');
+            onboardingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you! Your secure onboarding request has been submitted to Stallion Nexus.');
+                onboardingForm.reset();
+            });
+
+            // --- WHATSAPP CHAT WIDGET LOGIC ---
+            const chatToggleBtn = document.getElementById('chatToggleBtn');
+            const chatBoxPopup = document.getElementById('chatBoxPopup');
+            const closeChatBtn = document.getElementById('closeChatBtn');
+            const sendChatBtn = document.getElementById('sendChatBtn');
+            const chatInput = document.getElementById('chatInput');
+            
+            const whatsappNumber = "17706093466"; 
+
+            chatToggleBtn.addEventListener('click', () => {
+                chatBoxPopup.classList.toggle('active');
+                if(chatBoxPopup.classList.contains('active')) chatInput.focus();
+            });
+
+            closeChatBtn.addEventListener('click', () => {
+                chatBoxPopup.classList.remove('active');
+            });
+
+            function sendWhatsAppMessage() {
+                const message = chatInput.value.trim();
+                if(message) {
+                    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(url, '_blank');
+                    chatInput.value = '';
+                    chatBoxPopup.classList.remove('active');
+                }
+            }
+
+            sendChatBtn.addEventListener('click', sendWhatsAppMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if(e.key === 'Enter') sendWhatsAppMessage();
+            });
+        });
+    </script>
+
+</body>
+</html>

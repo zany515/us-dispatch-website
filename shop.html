@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= SEO OPTIMIZATION ================= -->
+    <title>Stallion Nexus × Zvylo | Premium Truck Accessories & Tools</title>
+    <meta name="description" content="Shop premium truck parts, essential accessories, and professional tools. Stallion Nexus has officially partnered with Zvylo to keep your fleet running smoothly.">
+    <meta name="keywords" content="truck parts, Zvylo truck accessories, freight dispatcher shop, Stallion Nexus partner, trucking tools, heavy duty truck equipment, driver comfort products">
+    <meta name="author" content="Stallion Nexus">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media Sharing -->
+    <meta property="og:title" content="Stallion Nexus × Zvylo | Official Equipment Partner">
+    <meta property="og:description" content="Upgrade your fleet with the best accessories and tools in the industry. Visit our official partner, Zvylo.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Scroll Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; overflow-wrap: break-word; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #F4F4F6; color: #0A0A0C; padding-top: 120px; overflow-x: hidden; }
+
+        /* ----------------------------------
+           1. Header
+        ----------------------------------- */
+        .site-header {
+            position: fixed; top: 18px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 1240px;
+            padding: 14px 28px; z-index: 1000; border-radius: 24px;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px) saturate(190%);
+            -webkit-backdrop-filter: blur(25px) saturate(190%); border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+        .logo-container { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo-icon { height: 42px; width: auto; object-fit: contain; }
+        .logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: #0A0A0C; text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo-text span { color: #FF4719; }
+
+        .nav-menu { display: flex; align-items: center; gap: 12px; list-style: none; }
+        .nav-link { text-decoration: none; color: #0A0A0C; font-weight: 600; font-size: 0.9rem; padding: 8px 14px; border-radius: 14px; transition: all 0.25s ease; text-transform: uppercase; letter-spacing: 0.5px;}
+        .nav-link:hover, .nav-link.active { color: #FF4719; background: rgba(255, 71, 25, 0.08); }
+
+        .btn-action { background: #FF4719; color: #FFFFFF; padding: 10px 22px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; text-decoration: none; box-shadow: 0 8px 20px rgba(255, 71, 25, 0.3); transition: all 0.3s ease; display: inline-block; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-action:hover { transform: translateY(-2px); background: #E03A10; box-shadow: 0 12px 25px rgba(255, 71, 25, 0.45); }
+
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: transparent; border: none; cursor: pointer; padding: 6px; border-radius: 8px; }
+        .mobile-toggle span { width: 24px; height: 3px; background-color: #0A0A0C; border-radius: 3px; transition: all 0.3s ease; }
+
+        /* ----------------------------------
+           2. Page Header Section
+        ----------------------------------- */
+        .container { max-width: 1240px; margin: 0 auto; padding: 40px 20px 80px 20px; }
+
+        .page-header { text-align: center; margin-bottom: 70px; }
+        .slogan-badge { 
+            display: inline-flex; align-items: center; gap: 8px; background: #0A0A0C; color: #FFFFFF; 
+            padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; 
+            letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); animation: pulseGlow 3s infinite alternate; 
+        }
+        .slogan-badge .dot { width: 8px; height: 8px; background: #FF4719; border-radius: 50%; }
+        .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); color: #0A0A0C; margin-bottom: 20px; line-height: 1.1; text-transform: uppercase; letter-spacing: -1px;}
+        .page-header h1 span { color: #FF4719; }
+        .page-header p { font-size: 1.15rem; color: #55555E; line-height: 1.6; max-width: 750px; margin: 0 auto; font-weight: 500;}
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 25, 0.4); }
+            100% { box-shadow: 0 0 0 12px rgba(255, 71, 25, 0); }
+        }
+
+        /* ----------------------------------
+           3. Partnership Story Section
+        ----------------------------------- */
+        .story-section { background: #FFFFFF; border-radius: 28px; padding: 60px; box-shadow: 0 12px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; margin-bottom: 80px; align-items: center; max-width: 100%;}
+        .story-content { max-width: 100%; }
+        .story-content h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 20px; color: #0A0A0C; letter-spacing: -1px; line-height: 1.1;}
+        .story-content h2 span { color: #FF4719;}
+        .story-content p { font-size: 1.1rem; color: #55555E; line-height: 1.7; margin-bottom: 20px; font-weight: 500;}
+
+        .zvylo-logo-box { background: #0A0A0C; padding: 50px 40px; border-radius: 20px; text-align: center; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100%; position: relative; overflow: hidden;}
+        .zvylo-logo-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,71,25,0.15) 0%, transparent 60%); pointer-events: none; }
+        .zvylo-logo-box h3 { font-family: 'Syne', sans-serif; font-size: 3.5rem; letter-spacing: 2px; margin-bottom: 0; color: #FFFFFF; position: relative; z-index: 2;}
+
+        /* ----------------------------------
+           4. Products Grid
+        ----------------------------------- */
+        .section-title { text-align: center; font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: -1px; color: #0A0A0C;}
+        .section-title span { color: #FF4719; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px; }
+
+        .product-card { background: #FFFFFF; border-radius: 24px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); text-align: left; transition: all 0.4s ease; overflow: hidden; display: flex; flex-direction: column;}
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255, 71, 25, 0.08); border-color: rgba(255, 71, 25, 0.2); }
+        .product-icon { width: 60px; height: 60px; background: rgba(255, 71, 25, 0.08); color: #FF4719; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; }
+        .product-icon svg { width: 30px; height: 30px; fill: currentColor; }
+        .product-card h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 15px; color: #0A0A0C; letter-spacing: -0.5px;}
+        .product-card p { font-size: 1.05rem; color: #55555E; line-height: 1.6; flex-grow: 1;}
+        
+        /* Zvylo Items Detailed List styling */
+        .product-card ul { list-style: none; margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 20px;}
+        .product-card ul li { font-size: 0.95rem; color: #0A0A0C; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;}
+        .product-card ul li svg { width: 18px; height: 18px; fill: #FF4719; flex-shrink: 0; }
+
+        /* ----------------------------------
+           5. BIG ZVYLO VIP OFFER BANNER
+        ----------------------------------- */
+        .zvylo-banner {
+            max-width: 1240px; margin: 40px auto 80px auto; padding: 80px 40px;
+            background: linear-gradient(135deg, #0A0A0C 0%, #1A1A1C 100%);
+            border-radius: 30px; text-align: center; color: #FFFFFF;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(255,71,25,0.3);
+            position: relative; overflow: hidden;
+            z-index: 5;
+        }
+        .zvylo-banner::before {
+            content: ''; position: absolute; top: -50%; left: -20%; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255,71,25,0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;
+        }
+        .zvylo-content { position: relative; z-index: 2; }
+        .discount-highlight { font-family: 'Syne', sans-serif; font-size: 5rem; font-weight: 800; color: #FF4719; line-height: 1; margin-bottom: 10px; text-shadow: 0 10px 30px rgba(255,71,25,0.3);}
+        .zvylo-content h2 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1px; color: #FFFFFF;}
+        .zvylo-content p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 750px; margin: 0 auto 40px auto; line-height: 1.6; }
+
+        .btn-zvylo { background: #FF4719; color: #FFFFFF; padding: 18px 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease; border-radius: 40px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(255, 71, 25, 0.4);}
+        .btn-zvylo:hover { background: #E03A10; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255, 71, 25, 0.6); }
+
+        /* ----------------------------------
+           6. FULL COMPREHENSIVE FOOTER
+        ----------------------------------- */
+        .site-footer { background: #0A0A0C; color: #FFFFFF; padding: 80px 20px 40px 20px; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 50px;}
+        .footer-container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 60px; }
+
+        .footer-brand .logo-text { font-family: 'Syne', sans-serif; font-size: 1.5rem; color: #FFFFFF; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
+        .footer-brand .logo-text span { color: #FF4719; }
+        .footer-brand .logo-icon-footer { width: 35px; height: auto; }
+        .footer-brand p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+
+        .footer-col h4 { font-family: 'Syne', sans-serif; font-size: 1.2rem; color: #FFFFFF; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid rgba(255, 71, 25, 0.5); display: inline-block; padding-bottom: 5px;}
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; }
+        .footer-col ul li a:hover { color: #FF4719; padding-left: 5px; }
+
+        .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .contact-item svg { width: 22px; height: 22px; fill: #FF4719; flex-shrink: 0; margin-top: 3px; }
+        .contact-text { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.5; }
+        .contact-text strong { color: #FFFFFF; display: block; margin-bottom: 3px; font-family: 'Syne', sans-serif; letter-spacing: 0.5px;}
+
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.9rem; }
+
+        /* ----------------------------------
+           7. WHATSAPP CHAT WIDGET
+        ----------------------------------- */
+        .floating-chat-btn { position: fixed; bottom: 30px; right: 30px; background: #FF4719; color: #FFFFFF; border: none; display: flex; align-items: center; gap: 10px; padding: 15px 25px; border-radius: 50px; cursor: pointer; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; box-shadow: 0 10px 30px rgba(255, 71, 25, 0.4); z-index: 9999; transition: all 0.3s ease; }
+        .floating-chat-btn:hover { transform: translateY(-5px); background: #E03A10; box-shadow: 0 15px 40px rgba(255, 71, 25, 0.6); }
+        .floating-chat-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+        .chat-box-popup { position: fixed; bottom: 90px; right: 30px; width: 340px; background: #FFFFFF; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; z-index: 10000; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; }
+        .chat-box-popup.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .chat-header { background: #25D366; color: #FFFFFF; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .chat-header-info { display: flex; align-items: center; gap: 10px; }
+        .chat-header-info svg { width: 28px; height: 28px; fill: #FFFFFF; }
+        .chat-header-info strong { display: block; font-size: 1.1rem; line-height: 1.2; font-family: 'Syne', sans-serif; }
+        .chat-header-info p { font-size: 0.8rem; opacity: 0.9; margin: 0; }
+        .close-chat { background: none; border: none; color: #FFFFFF; font-size: 1.8rem; cursor: pointer; line-height: 1; outline: none; }
+        .chat-body { padding: 20px; background: #E5DDD5; height: 200px; overflow-y: auto; }
+        .chat-message-received { background: #FFFFFF; color: #0A0A0C; font-size: 0.95rem; line-height: 1.5; padding: 12px 16px; border-radius: 0 15px 15px 15px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .chat-footer { padding: 15px; background: #FFFFFF; display: flex; gap: 10px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .chat-footer input { flex: 1; padding: 12px 15px; border: 1px solid #E0E0E0; border-radius: 30px; outline: none; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .chat-footer input:focus { border-color: #25D366; }
+        .chat-footer button { background: #25D366; color: #FFFFFF; border: none; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.3s ease; }
+        .chat-footer button:hover { background: #1EBE55; }
+        .chat-footer button svg { width: 20px; height: 20px; fill: currentColor; transform: translateX(2px); }
+
+        /* ----------------------------------
+           8. Strict Mobile Responsive Rules
+        ----------------------------------- */
+        @media (max-width: 968px) {
+            .story-section { grid-template-columns: 1fr; padding: 40px 25px; gap: 40px;}
+            .zvylo-logo-box { padding: 40px; min-height: 250px;}
+            .zvylo-banner { padding: 60px 25px; margin-inline: 20px; }
+        }
+
+        @media (max-width: 868px) {
+            body { padding-top: 100px; }
+
+            .site-header { width: 95%; padding: 12px 20px; top: 18px; } 
+            .header-inner { flex-wrap: wrap; }
+            .logo-container { flex: 1; }
+            .logo-icon { height: 36px; } 
+            .logo-text { font-size: 1rem; } 
+            .mobile-toggle { display: flex; margin-left: auto; }
+
+            nav { width: 100%; }
+            .nav-menu { display: none; width: 100%; flex-direction: column; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 0, 0, 0.08); align-items: center; justify-content: center; gap: 10px; padding-bottom: 10px;}
+            .nav-menu.show { display: flex; }
+            .nav-menu li { width: 100%; display: flex; justify-content: center; align-items: center; }
+
+            .nav-link { width: 100%; max-width: 250px; text-align: center; padding: 12px 20px; display: block; border-radius: 20px; margin: 0 auto; font-size: 1rem;}
+            .btn-action { margin-top: 5px; width: 100%; max-width: 250px; text-align: center; padding: 14px 30px; display: block; margin: 0 auto; font-size: 1rem;}
+
+            .products-grid { grid-template-columns: 1fr; }
+            .product-card { padding: 30px 20px; }
+
+            /* NEW FOOTER MOBILE STYLES */
+            .footer-container { gap: 40px; text-align: center;}
+            .footer-brand .logo-text { justify-content: center; }
+            .contact-item { justify-content: center; text-align: center; flex-direction: column; align-items: center;}
+
+            .floating-chat-btn { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.9rem; }
+            .floating-chat-btn svg { width: 20px; height: 20px; }
+            .chat-box-popup { right: 15px; left: 15px; width: auto; bottom: 80px; }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .discount-highlight { font-size: 3.5rem; }
+            .story-content h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-container">
+                <img src="icon.png" alt="Stallion Nexus Icon" class="logo-icon">
+                <div class="logo-text">STALLION <span>NEXUS</span></div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="offers.html" class="nav-link">Offers</a></li>
+                    <li><a href="shop.html" class="nav-link active shop-link">Shop</a></li> 
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li><a href="partner.html" class="btn-action">Setup Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Page Title -->
+        <div class="page-header" data-aos="fade-down" data-aos-duration="1000">
+            <div class="slogan-badge">
+                <span class="dot"></span> OFFICIAL PARTNER
+            </div>
+            <h1>Stallion Nexus <span>×</span> Zvylo</h1>
+            <p>We empower the owner, while Zvylo upgrades the truck. Explore our official equipment partnership designed to keep your fleet running safely and comfortably on the road.</p>
+        </div>
+
+        <!-- Partnership Story Section -->
+        <div class="story-section" data-aos="fade-up" data-aos-duration="1000">
+            <div class="story-content">
+                <h2>Why <span>Zvylo?</span></h2>
+                <p>A breakdown on the highway doesn't just cost time; it costs thousands of dollars in lost freight and delayed shipments. At Stallion Nexus, our primary goal is to keep you stress-free and profitable.</p>
+                <p>We vetted multiple suppliers and chose <strong>Zvylo</strong> as our exclusive equipment partner because of their uncompromising commitment to high-grade materials, rapid shipping, and driver safety. From essential maintenance tools to premium cabin comfort, Zvylo ensures your truck is always ready for the next high-paying load.</p>
+            </div>
+            <div class="zvylo-logo-box" data-aos="zoom-in" data-aos-delay="200">
+                <h3>ZVYLO</h3>
+            </div>
+        </div>
+
+        <!-- Products / Gear Highlights -->
+        <h2 class="section-title" data-aos="fade-up">Equipment & <span>Accessories</span></h2>
+        <div class="products-grid">
+
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.5 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.3z"/></svg>
+                </div>
+                <h3>Heavy-Duty Parts & Tools</h3>
+                <p>From high-grade wrenches to emergency repair kits, ensure your drivers have the professional tools required to handle quick fixes and maintain maximum operational uptime.</p>
+                <ul>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Emergency Repair Kits</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Professional Wrenches</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Maintenance Tools</li>
+                </ul>
+            </div>
+
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <h3>Safety & Securement</h3>
+                <p>Stay strictly DOT compliant. Zvylo provides elite load binders, heavy-duty chains, E-tracks, and premium straps to secure even the most volatile freight safely.</p>
+                <ul>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Heavy-Duty Chains</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Ratchet Straps & Binders</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> E-Track Systems</li>
+                </ul>
+            </div>
+
+            <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18 4H6C4.9 4 4 4.9 4 6v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                </div>
+                <h3>Driver Comfort</h3>
+                <p>The truck is a driver's home. Upgrade their experience with premium ergonomic seating covers, relaxing cabin accessories, heavy-duty phone mounts, and rapid charging systems.</p>
+                <ul>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Ergonomic Seat Covers</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Heavy-Duty Phone Mounts</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Rapid Cabin Chargers</li>
+                </ul>
+            </div>
+
+            <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="product-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7.5 12c0-2.48 2.02-4.5 4.5-4.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5-4.5-2.02-4.5-4.5z"/></svg>
+                </div>
+                <h3>Styling & Exterior</h3>
+                <p>Make your fleet stand out on the highway. Shop top-tier LED lighting setups, chrome exterior upgrades, and premium styling accessories to make your truck look as good as it runs.</p>
+                <ul>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> LED Lighting Setups</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Chrome Exterior Upgrades</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Custom Styling Accessories</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- BIG ZVYLO PROMO BANNER & DISCOUNT -->
+    <section class="zvylo-banner" data-aos="zoom-in">
+        <div class="zvylo-content">
+            <div class="discount-highlight">10% OFF</div>
+            <h2>LIFETIME VIP <span>DISCOUNT</span></h2>
+            <p>As an active Stallion Nexus partner, your <strong>MC/DOT number</strong> is automatically converted into a permanent VIP coupon code on Zvylo. Use it at checkout to get a flat 10% discount on all parts, tools, and accessories forever.</p>
+
+            <!-- THIS BUTTON TAKES THE USER TO ZVYLO -->
+            <a href="https://www.zvylo.com" target="_blank" class="btn-zvylo">Visit Zvylo.com & Claim Discount ➔</a>
+        </div>
+    </section>
+
+    <!-- MEGA FOOTER SECTION -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand" data-aos="fade-up" data-aos-delay="100">
+                <div class="logo-text"><img src="icon.png" alt="Stallion Nexus Icon" class="logo-icon-footer"> STALLION <span>NEXUS</span></div>
+                <p>Your strategic growth partner in logistics and digital wealth. We handle the complex backend so you can focus entirely on driving and scaling your fleet.</p>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <div class="contact-text">
+                        <strong>Email Us</strong>
+                        zayn@stallionnexus.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <div class="contact-text">
+                        <strong>Call / WhatsApp</strong>
+                        +1 (770) 609-3466
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dispatch Services Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>Dispatch Services</h4>
+                <ul>
+                    <li><a href="services.html">Premium Rate Negotiation</a></li>
+                    <li><a href="services.html">Strategic Route Planning</a></li>
+                    <li><a href="services.html">Broker Communication</a></li>
+                    <li><a href="services.html">Billing & Invoicing</a></li>
+                    <li><a href="services.html">IFTA & DOT Compliance</a></li>
+                    <li><a href="services.html">24/7 Driver Support</a></li>
+                </ul>
+            </div>
+
+            <!-- E-Commerce Services Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>E-Commerce Agency</h4>
+                <ul>
+                    <li><a href="services.html">Amazon FBA Automation</a></li>
+                    <li><a href="services.html">eBay Dropshipping Stores</a></li>
+                    <li><a href="services.html">TikTok Shop Management</a></li>
+                    <li><a href="services.html">Custom Brand Storefronts</a></li>
+                    <li><a href="services.html">Passive Income Scaling</a></li>
+                </ul>
+            </div>
+
+            <!-- Office & Time Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                <h4>Headquarters</h4>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <div class="contact-text">
+                        <strong>Location</strong>
+                        [Your Address Here],<br>United States
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <div class="contact-text">
+                        <strong>Business Hours</strong>
+                        Dispatch: 24/7 Available<br>Office: Mon - Fri (8AM - 6PM)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>©️ 2026 Stallion Nexus. All rights reserved. Powered by digital excellence.</p>
+        </div>
+    </footer>
+
+    <!-- ================= WHATSAPP CHAT WIDGET ================= -->
+    <button class="floating-chat-btn" id="chatToggleBtn" aria-label="Chat with Stallion Nexus">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.48 5.22 3.79 6.84V22l4.13-2.33c.66.15 1.35.25 2.08.25 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/>
+        </svg>
+        <span>Chat With Us</span>
+    </button>
+
+    <div class="chat-box-popup" id="chatBoxPopup">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                <div>
+                    <strong>Stallion Nexus</strong>
+                    <p>Usually replies instantly</p>
+                </div>
+            </div>
+            <button class="close-chat" id="closeChatBtn">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message-received">
+                Hi there! 👋<br>Looking to upgrade your truck or claim your discount? Let us know!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+            <button id="sendChatBtn" aria-label="Send Message">
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- AOS JS and Init script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+        window.addEventListener('load', () => {
+            AOS.init({ once: true, offset: 100 });
+
+            // --- PERFECT MOBILE MENU TOGGLE ---
+            const mobileToggleBtn = document.getElementById("mobileToggleBtn");
+            const navMenu = document.getElementById("navMenu");
+
+            mobileToggleBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); 
+                navMenu.classList.toggle("show");
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnToggleBtn = mobileToggleBtn.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnToggleBtn && navMenu.classList.contains("show")) {
+                    navMenu.classList.remove("show");
+                }
+            });
+
+            // --- WHATSAPP CHAT WIDGET LOGIC ---
+            const chatToggleBtn = document.getElementById('chatToggleBtn');
+            const chatBoxPopup = document.getElementById('chatBoxPopup');
+            const closeChatBtn = document.getElementById('closeChatBtn');
+            const sendChatBtn = document.getElementById('sendChatBtn');
+            const chatInput = document.getElementById('chatInput');
+
+            const whatsappNumber = "17706093466"; 
+
+            chatToggleBtn.addEventListener('click', () => {
+                chatBoxPopup.classList.toggle('active');
+                if(chatBoxPopup.classList.contains('active')) chatInput.focus();
+            });
+
+            closeChatBtn.addEventListener('click', () => {
+                chatBoxPopup.classList.remove('active');
+            });
+
+            function sendWhatsAppMessage() {
+                const message = chatInput.value.trim();
+                if(message) {
+                    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(url, '_blank');
+                    chatInput.value = '';
+                    chatBoxPopup.classList.remove('active');
+                }
+            }
+
+            sendChatBtn.addEventListener('click', sendWhatsAppMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if(e.key === 'Enter') sendWhatsAppMessage();
+            });
+        });
+    </script>
+
+</body>
+</html>
