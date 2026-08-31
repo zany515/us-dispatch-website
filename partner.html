@@ -114,20 +114,13 @@
             border-color: #FF4719; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255, 71, 25, 0.08); 
         }
 
-        /* Drag and Drop Upload Box */
-        .upload-box { 
-            border: 2px dashed #D1D1D6; border-radius: 16px; padding: 40px 20px; text-align: center; 
-            background: #F9F9FB; transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        /* Status Message */
+        .form-message { 
+            grid-column: 1 / -1; padding: 15px 20px; border-radius: 12px; text-align: center; font-weight: 600; 
+            display: none; margin-bottom: 10px;
         }
-        .upload-box:hover { border-color: #FF4719; background: rgba(255, 71, 25, 0.02); }
-        .upload-icon { width: 45px; height: 45px; fill: #A0A0A8; margin-bottom: 15px; transition: all 0.3s ease; }
-        .upload-box:hover .upload-icon { fill: #FF4719; transform: translateY(-5px); }
-        .upload-text { font-weight: 700; color: #0A0A0C; font-size: 1.1rem; margin-bottom: 5px; }
-        .upload-subtext { font-size: 0.9rem; color: #888891; font-weight: 500; }
-        
-        .download-note { font-size: 0.95rem; color: #888891; margin-top: 15px; line-height: 1.5; font-weight: 500;}
-        .download-note a { color: #FF4719; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; transition: color 0.3s ease;}
-        .download-note a:hover { color: #E03A10; }
+        .form-message.success { background: #D4EDDA; color: #155724; border: 1px solid #C3E6CB; display: block; }
+        .form-message.error { background: #F8D7DA; color: #721C24; border: 1px solid #F5C6CB; display: block; }
 
         .submit-btn-wrapper { grid-column: 1 / -1; margin-top: 15px; display: flex; justify-content: center;}
         
@@ -138,6 +131,7 @@
         }
         .submit-btn svg { width: 22px; height: 22px; fill: currentColor; }
         .submit-btn:hover { background: #E03A10; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255, 71, 25, 0.45); }
+        .submit-btn:disabled { background: #CCCCCC; cursor: not-allowed; transform: none; }
 
         /* ----------------------------------
            5. Required Documents Section
@@ -344,35 +338,41 @@
         </div>
 
         <!-- FORM CARD -->
-        <form class="form-card" id="onboardingForm" data-aos="fade-up" data-aos-duration="1000">
+        <form class="form-card" id="onboardingForm" method="POST" action="https://api.web3forms.com/submit" data-aos="fade-up" data-aos-duration="1000">
             <div class="form-grid">
+                
+                <!-- Web3Forms Access Key (Hidden) -->
+                <input type="hidden" name="access_key" value="ec971f50-a743-4daa-a688-df308f80333f">
+                
+                <!-- Success/Error Message -->
+                <div class="form-message" id="formMessage"></div>
                 
                 <!-- Common Fields -->
                 <div class="form-group">
                     <label>Full Name <span>*</span></label>
-                    <input type="text" placeholder="John Smith" required>
+                    <input type="text" name="name" placeholder="John Smith" required>
                 </div>
                 
                 <div class="form-group">
                     <label>Email Address <span>*</span></label>
-                    <input type="email" placeholder="john@company.com" required>
+                    <input type="email" name="email" placeholder="john@company.com" required>
                 </div>
 
                 <div class="form-group">
                     <label>Phone Number <span>*</span></label>
-                    <input type="tel" placeholder="+1 (555) 000-0000" required>
+                    <input type="tel" name="phone" placeholder="+1 (555) 000-0000" required>
                 </div>
                 
                 <div class="form-group freight-field">
                     <label>Company Name</label>
-                    <input type="text" placeholder="Your Trucking LLC">
+                    <input type="text" name="company_name" placeholder="Your Trucking LLC">
                 </div>
 
                 <!-- FREIGHT SPECIFIC FIELDS -->
                 <div class="form-group freight-field">
                     <label>Truck Type <span>*</span></label>
                     <div style="position: relative;">
-                        <select style="width: 100%; cursor: pointer;" required id="truckSelect">
+                        <select name="truck_type" style="width: 100%; cursor: pointer;" id="truckSelect">
                             <option value="" disabled selected>Select truck type</option>
                             <option value="box-truck">Box Truck</option>
                             <option value="reefer-box-truck">Reefer Box Truck</option>
@@ -389,33 +389,19 @@
 
                 <div class="form-group freight-field">
                     <label>MC Number</label>
-                    <input type="text" placeholder="MC-000000">
+                    <input type="text" name="mc_number" placeholder="MC-000000">
                 </div>
 
                 <div class="form-group full-width freight-field">
                     <label>Message</label>
-                    <textarea placeholder="Tell us about your operation — lanes, goals, or any questions..."></textarea>
-                </div>
-
-                <div class="form-group full-width freight-field">
-                    <label style="color: #0A0A0C;">Dispatch Agreement <span style="text-transform: none; font-weight: 500; letter-spacing: 0; color: #888;">(optional — PDF or Word, max 10MB)</span></label>
-                    
-                    <div class="upload-box" onclick="alert('Demo: Select file dialog opened')">
-                        <svg class="upload-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.36 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
-                        <div class="upload-text">Click to upload or drag & drop</div>
-                        <div class="upload-subtext">Signed Dispatch Agreement · PDF, DOC, DOCX · Max 10MB</div>
-                    </div>
-                    
-                    <div class="download-note">
-                        Don't have the agreement yet? <a href="#">Download template</a> — you can also submit without it and we'll send one during onboarding.
-                    </div>
+                    <textarea name="message" placeholder="Tell us about your operation — lanes, goals, or any questions..."></textarea>
                 </div>
 
                 <!-- E-COMMERCE SPECIFIC FIELD (HIDDEN BY DEFAULT) -->
                 <div class="form-group full-width ecom-field" style="display: none;">
                     <label>Interested E-Commerce Service <span>*</span></label>
                     <div style="position: relative;">
-                        <select style="width: 100%; cursor: pointer;">
+                        <select name="ecommerce_service" style="width: 100%; cursor: pointer;">
                             <option value="" disabled selected>Select an E-Commerce Path</option>
                             <option value="done-for-you-store">Done-For-You Store Build (Shopify / TikTok)</option>
                             <option value="ebay-dropshipping">eBay Dropshipping Automation</option>
@@ -429,7 +415,7 @@
 
                 <div class="form-group full-width ecom-field" style="display: none;">
                     <label>Your Goals / Message</label>
-                    <textarea placeholder="Tell us about your digital goals, budget, or current operations..."></textarea>
+                    <textarea name="ecom_message" placeholder="Tell us about your digital goals, budget, or current operations..."></textarea>
                 </div>
 
                 <div class="submit-btn-wrapper">
@@ -533,7 +519,7 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                     <div class="contact-text">
                         <strong>Location</strong>
-                        [Your Address Here],<br>United States
+                        Wyoming,<br>United States
                     </div>
                 </div>
                 <div class="contact-item">
@@ -563,25 +549,25 @@
         <div class="chat-header">
             <div class="chat-header-info">
                 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    <div>
-                        <strong>Stallion Nexus</strong>
-                        <p>Usually replies instantly</p>
-                    </div>
-                </div>
-                <button class="close-chat" id="closeChatBtn">&times;</button>
-            </div>
-            <div class="chat-body">
-                <div class="chat-message-received">
-                    Hi there! 👋<br>Need help with onboarding? Send us a message!
+                <div>
+                    <strong>Stallion Nexus</strong>
+                    <p>Usually replies instantly</p>
                 </div>
             </div>
-            <div class="chat-footer">
-                <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
-                <button id="sendChatBtn" aria-label="Send Message">
-                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                </button>
+            <button class="close-chat" id="closeChatBtn">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message-received">
+                Hi there! 👋<br>Need help with onboarding? Send us a message!
             </div>
         </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+            <button id="sendChatBtn" aria-label="Send Message">
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+    </div>
 
     <!-- AOS JS and Init script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
@@ -635,12 +621,47 @@
                 submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit E-Commerce Request';
             });
 
-            // --- FORM SUBMISSION ---
+            // --- FORM SUBMISSION WITH WEB3FORMS ---
             const onboardingForm = document.getElementById('onboardingForm');
-            onboardingForm.addEventListener('submit', function(e) {
+            const formMessage = document.getElementById('formMessage');
+
+            onboardingForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                alert('Thank you! Your secure onboarding request has been submitted to Stallion Nexus.');
-                onboardingForm.reset();
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+                formMessage.className = 'form-message';
+                formMessage.textContent = '';
+
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        formMessage.className = 'form-message success';
+                        formMessage.textContent = '✓ Thank you! Your onboarding request has been submitted. We will contact you within 24 hours!';
+                        onboardingForm.reset();
+                        submitBtn.textContent = 'Submit Onboarding Request';
+                        submitBtn.disabled = false;
+                        // Reset to freight tab
+                        tabTrucking.click();
+                    } else {
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = '✗ Something went wrong. Please try again.';
+                        submitBtn.textContent = 'Submit Onboarding Request';
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = '✗ Error submitting form. Please check your internet connection.';
+                    submitBtn.textContent = 'Submit Onboarding Request';
+                    submitBtn.disabled = false;
+                }
             });
 
             // --- WHATSAPP CHAT WIDGET LOGIC ---
