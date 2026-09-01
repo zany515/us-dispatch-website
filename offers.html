@@ -17,7 +17,7 @@
     
     <!-- AOS Scroll Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+<link rel="icon" type="image/png" href="favicon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; overflow-wrap: break-word; }
         html { scroll-behavior: smooth; }
@@ -333,9 +333,10 @@
 
     </main>
 
-    <!-- MEGA FOOTER SECTION -->
+     <!-- MEGA FOOTER SECTION -->
     <footer class="site-footer">
         <div class="footer-container">
+            <!-- Brand Column -->
             <div class="footer-col footer-brand" data-aos="fade-up" data-aos-delay="100">
                 <div class="logo-text"> STALLION <span>NEXUS</span></div>
                 <p>Your strategic growth partner in logistics and digital wealth. We handle the complex backend so you can focus entirely on driving and scaling your fleet.</p>
@@ -343,18 +344,12 @@
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     <div class="contact-text">
                         <strong>Email Us</strong>
-                        zayn@stallionnexus.com
+                        support@stallionnexus.com
                     </div>
-                </div>
-                <div class="contact-item">
-                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    <div class="contact-text">
-                        <strong>Call / WhatsApp</strong>
-                        +1 (770) 609-3466
-                    </div>
-                </div>
+                
             </div>
 
+            <!-- Dispatch Services Column -->
             <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                 <h4>Dispatch Services</h4>
                 <ul>
@@ -367,6 +362,7 @@
                 </ul>
             </div>
 
+            <!-- E-Commerce Services Column -->
             <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                 <h4>E-Commerce Agency</h4>
                 <ul>
@@ -378,15 +374,10 @@
                 </ul>
             </div>
 
+            <!-- Office & Time Column -->
             <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
-                <h4>Headquarters</h4>
-                <div class="contact-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    <div class="contact-text">
-                        <strong>Location</strong>
-                        [Your Address Here],<br>United States
-                    </div>
-                </div>
+                <h4>Availability</h4>
+                
                 <div class="contact-item">
                     <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                     <div class="contact-text">
@@ -394,11 +385,13 @@
                         Dispatch: 24/7 Available<br>Office: Mon - Fri (8AM - 6PM)
                     </div>
                 </div>
+                
+                </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>© 2026 Stallion Nexus. All rights reserved. Developed by Stallion Nexus.</p>
+            <p>©️ 2026 Stallion Nexus. All rights reserved. Developed by Stallion Nexus.</p>
         </div>
     </footer>
 
@@ -423,7 +416,7 @@
         </div>
         <div class="chat-body">
             <div class="chat-message-received">
-                Hi there! 👋<br>Ready to claim your exclusive partnership bonus today?
+                Hi there! 👋<br>Need help with onboarding? Send us a message!
             </div>
         </div>
         <div class="chat-footer">
@@ -439,7 +432,7 @@
     <script defer>
         window.addEventListener('load', () => {
             AOS.init({ once: true, offset: 100 });
-            
+
             // --- PERFECT MOBILE MENU TOGGLE ---
             const mobileToggleBtn = document.getElementById("mobileToggleBtn");
             const navMenu = document.getElementById("navMenu");
@@ -458,6 +451,77 @@
                 }
             });
 
+            // --- TAB SWITCHER LOGIC (TRUCKING VS ECOMMERCE) ---
+            const tabTrucking = document.getElementById('tabTrucking');
+            const tabEcommerce = document.getElementById('tabEcommerce');
+            const freightFields = document.querySelectorAll('.freight-field');
+            const ecomFields = document.querySelectorAll('.ecom-field');
+            const submitBtn = document.getElementById('submitBtn');
+            const truckSelect = document.getElementById('truckSelect');
+
+            tabTrucking.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabTrucking.classList.add('active');
+                tabEcommerce.classList.remove('active');
+                freightFields.forEach(el => el.style.display = ''); // Show freight fields
+                ecomFields.forEach(el => el.style.display = 'none'); // Hide ecom fields
+                truckSelect.setAttribute('required', 'required'); // Require truck type
+                submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit Onboarding Request';
+            });
+
+            tabEcommerce.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabEcommerce.classList.add('active');
+                tabTrucking.classList.remove('active');
+                freightFields.forEach(el => el.style.display = 'none'); // Hide freight fields
+                ecomFields.forEach(el => el.style.display = ''); // Show ecom fields
+                truckSelect.removeAttribute('required'); // Remove required from hidden field
+                submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit E-Commerce Request';
+            });
+
+            // --- FORM SUBMISSION WITH WEB3FORMS ---
+            const onboardingForm = document.getElementById('onboardingForm');
+            const formMessage = document.getElementById('formMessage');
+
+            onboardingForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+                formMessage.className = 'form-message';
+                formMessage.textContent = '';
+
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        formMessage.className = 'form-message success';
+                        formMessage.textContent = '✓ Thank you! Your onboarding request has been submitted. We will contact you within 24 hours!';
+                        onboardingForm.reset();
+                        submitBtn.textContent = 'Submit Onboarding Request';
+                        submitBtn.disabled = false;
+                        // Reset to freight tab
+                        tabTrucking.click();
+                    } else {
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = '✗ Something went wrong. Please try again.';
+                        submitBtn.textContent = 'Submit Onboarding Request';
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = '✗ Error submitting form. Please check your internet connection.';
+                    submitBtn.textContent = 'Submit Onboarding Request';
+                    submitBtn.disabled = false;
+                }
+            });
+
             // --- WHATSAPP CHAT WIDGET LOGIC ---
             const chatToggleBtn = document.getElementById('chatToggleBtn');
             const chatBoxPopup = document.getElementById('chatBoxPopup');
@@ -465,7 +529,6 @@
             const sendChatBtn = document.getElementById('sendChatBtn');
             const chatInput = document.getElementById('chatInput');
             
-            // ===== ENTER YOUR WHATSAPP NUMBER HERE =====
             const whatsappNumber = "17706093466"; 
 
             chatToggleBtn.addEventListener('click', () => {
