@@ -467,6 +467,7 @@
         </div>
     </footer>
 
+    
     <!-- ================= WHATSAPP CHAT WIDGET ================= -->
     <button class="floating-chat-btn" id="chatToggleBtn" aria-label="Chat with Stallion Nexus">
         <svg viewBox="0 0 24 24">
@@ -479,122 +480,128 @@
         <div class="chat-header">
             <div class="chat-header-info">
                 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                <div>
-                    <strong>Stallion Nexus</strong>
-                    <p>Usually replies instantly</p>
-                </div>
-            </div>
-            <button class="close-chat" id="closeChatBtn">&times;</button>
-        </div>
-        <div class="chat-body">
-            <div class="chat-message-received">
-                Hi there! 👋<br>Need help with onboarding? Send us a message!
-            </div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
-            <button id="sendChatBtn" aria-label="Send Message">
-                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-            </button>
+        <div>
+            <strong>Stallion Nexus</strong>
+            <p>Usually replies instantly</p>
         </div>
     </div>
-
-    <!-- AOS JS and Init script -->
+    <button class="close-chat" id="closeChatBtn">&times;</button>
+</div>
+<div class="chat-body">
+    <div class="chat-message-received">
+        Hi there! 👋<br>How can we help you scale your operations today?
+    </div>
+</div>
+<div class="chat-footer">
+    <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+    <button id="sendChatBtn" aria-label="Send Message">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+</div>
+</div>
+    
+    <!-- JS Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
     <script defer>
         window.addEventListener('load', () => {
-            AOS.init({ once: true, offset: 100 });
-
-            // --- PERFECT MOBILE MENU TOGGLE ---
+            AOS.init({ once: true, offset: 50 });
+            
+            // --- COMPARISON SLIDER LOGIC ---
+            const compWrapper = document.getElementById('compWrapper');
+            let isDragging = false;
+    
+            if(compWrapper) {
+                function moveSlider(e) {
+                    if (!isDragging) return;
+                    let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                    let rect = compWrapper.getBoundingClientRect();
+                    let x = clientX - rect.left;
+                    let pos = (x / rect.width) * 100;
+                    if (pos < 10) pos = 10;
+                    if (pos > 90) pos = 90;
+                    compWrapper.style.setProperty('--pos', pos + '%');
+                }
+    
+                compWrapper.addEventListener('mousedown', (e) => { isDragging = true; moveSlider(e); });
+                window.addEventListener('mouseup', () => { isDragging = false; });
+                window.addEventListener('mousemove', moveSlider);
+    
+                compWrapper.addEventListener('touchstart', (e) => { isDragging = true; moveSlider(e); });
+                window.addEventListener('touchend', () => { isDragging = false; });
+                window.addEventListener('touchmove', moveSlider);
+            }
+    
+            // --- ANIMATED GLASS PANEL LOGIC ---
+            const glassPanel = document.getElementById('animatedGlassPanel');
+            const togglesGood = document.querySelectorAll('.toggle-good');
+            const togglesBad = document.querySelectorAll('.toggle-bad');
+    
+            if(glassPanel) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            setTimeout(() => {
+                                togglesGood.forEach(t => t.classList.add('on'));
+                                togglesBad.forEach(t => t.classList.remove('on'));
+                            }, 400);
+                        } else {
+                            togglesGood.forEach(t => t.classList.remove('on'));
+                            togglesBad.forEach(t => t.classList.add('on'));
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(glassPanel);
+            }
+    
+            // --- VIDEO HOVER & AUTOPLAY LOGIC ---
+            const heroVideo = document.getElementById('hero-video');
+            const heroArea = document.getElementById('heroArea');
+    
+            if (heroVideo) {
+                heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
+                heroVideo.addEventListener('ended', () => { heroVideo.pause(); });
+                heroArea.addEventListener('mouseenter', () => {
+                    if(heroVideo.ended || heroVideo.paused) {
+                        heroVideo.currentTime = 0;
+                        heroVideo.play();
+                    }
+                });
+            }
+    
             const mobileToggleBtn = document.getElementById("mobileToggleBtn");
             const navMenu = document.getElementById("navMenu");
-
+    
             mobileToggleBtn.addEventListener('click', function(event) {
                 event.stopPropagation(); 
                 navMenu.classList.toggle("show");
             });
-
+    
             document.addEventListener('click', function(event) {
                 const isClickInsideMenu = navMenu.contains(event.target);
                 const isClickOnToggleBtn = mobileToggleBtn.contains(event.target);
-
+    
                 if (!isClickInsideMenu && !isClickOnToggleBtn && navMenu.classList.contains("show")) {
                     navMenu.classList.remove("show");
                 }
             });
-
-            // --- TAB SWITCHER LOGIC (TRUCKING VS ECOMMERCE) ---
-            const tabTrucking = document.getElementById('tabTrucking');
-            const tabEcommerce = document.getElementById('tabEcommerce');
-            const freightFields = document.querySelectorAll('.freight-field');
-            const ecomFields = document.querySelectorAll('.ecom-field');
-            const submitBtn = document.getElementById('submitBtn');
-            const truckSelect = document.getElementById('truckSelect');
-
-            tabTrucking.addEventListener('click', (e) => {
-                e.preventDefault();
-                tabTrucking.classList.add('active');
-                tabEcommerce.classList.remove('active');
-                freightFields.forEach(el => el.style.display = ''); // Show freight fields
-                ecomFields.forEach(el => el.style.display = 'none'); // Hide ecom fields
-                truckSelect.setAttribute('required', 'required'); // Require truck type
-                submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit Onboarding Request';
-            });
-
-            tabEcommerce.addEventListener('click', (e) => {
-                e.preventDefault();
-                tabEcommerce.classList.add('active');
-                tabTrucking.classList.remove('active');
-                freightFields.forEach(el => el.style.display = 'none'); // Hide freight fields
-                ecomFields.forEach(el => el.style.display = ''); // Show ecom fields
-                truckSelect.removeAttribute('required'); // Remove required from hidden field
-                submitBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Submit E-Commerce Request';
-            });
-
-            // --- FORM SUBMISSION WITH WEB3FORMS ---
-            const onboardingForm = document.getElementById('onboardingForm');
-            const formMessage = document.getElementById('formMessage');
-
-            onboardingForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Submitting...';
-                formMessage.className = 'form-message';
-                formMessage.textContent = '';
-
-                try {
-                    const formData = new FormData(this);
-                    const response = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                        formMessage.className = 'form-message success';
-                        formMessage.textContent = '✓ Thank you! Your onboarding request has been submitted. We will contact you within 24 hours!';
-                        onboardingForm.reset();
-                        submitBtn.textContent = 'Submit Onboarding Request';
-                        submitBtn.disabled = false;
-                        // Reset to freight tab
-                        tabTrucking.click();
-                    } else {
-                        formMessage.className = 'form-message error';
-                        formMessage.textContent = '✗ Something went wrong. Please try again.';
-                        submitBtn.textContent = 'Submit Onboarding Request';
-                        submitBtn.disabled = false;
-                    }
-                } catch (error) {
-                    formMessage.className = 'form-message error';
-                    formMessage.textContent = '✗ Error submitting form. Please check your internet connection.';
-                    submitBtn.textContent = 'Submit Onboarding Request';
-                    submitBtn.disabled = false;
-                }
-            });
-
-            // --- WHATSAPP CHAT WIDGET LOGIC ---
+    
+            function updateClocks() {
+                const now = new Date();
+                const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+                const estElement = document.getElementById('clock-est');
+                const cstElement = document.getElementById('clock-cst');
+                const mstElement = document.getElementById('clock-mst');
+                const pstElement = document.getElementById('clock-pst');
+    
+                if(estElement) estElement.innerText = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'America/New_York' }).format(now);
+                if(cstElement) cstElement.innerText = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'America/Chicago' }).format(now);
+                if(mstElement) mstElement.innerText = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'America/Denver' }).format(now);
+                if(pstElement) pstElement.innerText = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'America/Los_Angeles' }).format(now);
+            }
+            setInterval(updateClocks, 1000); updateClocks();
+    
+            // WhatsApp Chat Widget Logic
             const chatToggleBtn = document.getElementById('chatToggleBtn');
             const chatBoxPopup = document.getElementById('chatBoxPopup');
             const closeChatBtn = document.getElementById('closeChatBtn');
@@ -602,16 +609,16 @@
             const chatInput = document.getElementById('chatInput');
             
             const whatsappNumber = "17706093466"; 
-
+    
             chatToggleBtn.addEventListener('click', () => {
                 chatBoxPopup.classList.toggle('active');
                 if(chatBoxPopup.classList.contains('active')) chatInput.focus();
             });
-
+    
             closeChatBtn.addEventListener('click', () => {
                 chatBoxPopup.classList.remove('active');
             });
-
+    
             function sendWhatsAppMessage() {
                 const message = chatInput.value.trim();
                 if(message) {
@@ -621,13 +628,12 @@
                     chatBoxPopup.classList.remove('active');
                 }
             }
-
+    
             sendChatBtn.addEventListener('click', sendWhatsAppMessage);
             chatInput.addEventListener('keypress', (e) => {
                 if(e.key === 'Enter') sendWhatsAppMessage();
             });
         });
     </script>
-
 </body>
 </html>
